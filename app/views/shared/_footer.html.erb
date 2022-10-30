@@ -1,13 +1,19 @@
-
 <footer>
-<hr>
+  <hr />
   <div>
-    <div>
-      <p ><%= current_year %></p>
-      <p >Yarex</p>
-      <p ><%= github_url("yarexmarvin", "TestGuru") %></p>
-      <p>This is a training project<p>
-      <p ><%= link_to 'Учебный проект в онлайн-школе Thinknetica',  "https://thinknetica.com", target:"_blank" %></p>
+    <div class="footer__content">
+      <div>
+        <p>This is a training project for:</p>
+        <p>
+          <%= link_to 'Учебный проект в онлайн-школе Thinknetica',
+          "https://thinknetica.com", target:"_blank" %>
+        </p>
+      </div>
+      <div><%= github_url("yarexmarvin", "TestGuru") %></div>
+      <div>
+        <p>Yarex Marvin® </p>
+        <p><%= current_year %></p>
+      </div>
     </div>
   </div>
-</footer> 
+</footer>

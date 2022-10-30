@@ -1,6 +1,13 @@
-<h1><%= @test.title%> test</h1>
-<h3>Level <%= @test.level%></h1>
-<%= render @test.questions %>
-<hr>
-<%= link_to 'create a new question', new_test_question_path(@test)%>
-<%= link_to 'Back to list of tests', tests_path%>
+<h2><%= @test.title%> test</h2>
+<hr />
+<%= link_to 'All tests', tests_path%> |
+<%= link_to 'New question', new_test_question_path(@test) %> 
+<hr />
+
+<table>
+  <tr>
+    <th>Actions</th>
+    <th>Question</th>
+  </tr>
+  <%= render @test.questions %>
+</table>
