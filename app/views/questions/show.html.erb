@@ -1,5 +1,5 @@
-<h3><%=@question.test.title%> question</h3>
-<p><%=@question.body%></p>
+<h3><%= @question.test.title %> question</h3>
+<p><%= @question.body %></p>
 <hr />
 <%= link_to 'Back', test_path(@question.test_id) %> | <%= link_to 'Edit',
 edit_question_path(@question) %> | <%= link_to 'Delete',

@@ -1,12 +1,6 @@
 module TestsHelper
-  LEVELS = {
-    0 => :trainee,
-    1 => :beginner,
-    2 => :intermediate,
-    3 => :difficult,
-    4 => :hard,
-    5 => :extreme,
-  }
+  
+  LEVELS = %i[trainee beginner intermediate difficult hard extreme].freeze
 
   def questions_amount(test)
     test.questions.count
@@ -15,4 +9,5 @@ module TestsHelper
   def level_translation(level)
     LEVELS[level]
   end
+
 end

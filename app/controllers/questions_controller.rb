@@ -1,8 +1,13 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show edit update destroy]
+  before_action :find_question, only: %i[ show edit update destroy ]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+
+  def index
+    @questions = @test.questions.pluck(:body)
+    render plain: @questions
+  end
 
   def show; end
 
@@ -21,8 +26,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit;end
 
   def update
     if @question.update(question_params)
@@ -33,11 +37,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    if @question.destroy
-      redirect_to test_path(@question.test)
-    else
-      render :show
-    end
+    @question.destroy
+    render plain: "The question has been deleted!"
   end
 
   def find_question
