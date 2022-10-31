@@ -1,12 +1,10 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[ show edit update destroy ]
+  before_action :find_test, only: %i[ new create]
+  before_action :find_question, only: %i[ index show edit update destroy ]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = @test.questions.pluck(:body)
-    render plain: @questions
+  def index;
   end
 
   def show; end
@@ -26,7 +24,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
   def update
     if @question.update(question_params)
