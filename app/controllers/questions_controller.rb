@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render plain: "The question has been deleted!"
+    redirect_to @question.test
   end
 
   def find_question
