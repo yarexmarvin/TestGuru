@@ -1,0 +1,13 @@
+<h2><%= @test.title%> test</h2>
+<hr />
+<%= link_to 'All tests', tests_path%> |
+<%= link_to 'New question', new_test_question_path(@test) %> 
+<hr />
+
+<table>
+  <tr>
+    <th>Actions</th>
+    <th>Question</th>
+  </tr>
+  <%= render @test.questions %>
+</table>

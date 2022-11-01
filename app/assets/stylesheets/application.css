@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+/* footer */
+.footer__content > div {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__content > div p {
+    margin: 5px
+}
