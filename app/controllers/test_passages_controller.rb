@@ -1,8 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage
 
-  # rescue_from TestPassagesController::NoMethodError, with: :rescue_with_test_passage_question_not_found
-
   def show
   end
 
@@ -23,7 +21,4 @@ class TestPassagesController < ApplicationController
     @test_passage = TestPassage.find(params[:id])
   end
 
-  def rescue_with_test_passage_question_not_found
-    render plan: "test is not available"
-  end
 end
