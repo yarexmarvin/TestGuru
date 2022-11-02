@@ -15,11 +15,20 @@
  */
 
 /* footer */
-.footer__content > div {
+.footer__content>div {
     display: flex;
     justify-content: center;
 }
 
-.footer__content > div p {
+.footer__content>div p {
     margin: 5px
+}
+
+
+/* test_passage */
+.test_passed {
+    color: green
+}
+.test_not_passed {
+    color: tomato
 }

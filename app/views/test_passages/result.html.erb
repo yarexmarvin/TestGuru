@@ -1,0 +1,9 @@
+<h3>Results of <%= @test_passage.test.title %> test</h3>
+<h4>
+  Total: <%= @test_passage.correct_questions%> of <%=
+  @test_passage.test.questions.count %> questions
+</h4>
+
+<%= define_result %>
+
+<%= link_to 'Back to tests', tests_path %>
