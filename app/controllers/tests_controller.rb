@@ -1,8 +1,5 @@
 class TestsController < ApplicationController
 
-  before_action :set_user, only: :start
-  before_action :set_test, only: :start
-
   def index
     @tests = Test.all
   end
@@ -12,13 +9,14 @@ class TestsController < ApplicationController
   end
 
   def start
+    set_user
+    set_test
     @user.tests.push(@test)
-    p @user.test_passage(@test)
     redirect_to @user.test_passage(@test)
   end
 
+  
   private
-
   def set_user
     @user = User.first
   end
