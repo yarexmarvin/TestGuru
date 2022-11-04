@@ -11,7 +11,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    puts params
     @question = @test.questions.new(question_params)
 
     if @question.save
