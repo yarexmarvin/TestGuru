@@ -1,4 +1,5 @@
 module TestPassagesHelper
+
   def define_result
     if @test_passage.passed?
       content_tag(:p, "Test passed", class: "test_passed")
