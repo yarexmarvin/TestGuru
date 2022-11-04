@@ -1,7 +1,7 @@
 require 'digest/sha1'
 class User < ApplicationRecord
 
-  VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL = (/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i).freeze
 
   has_many :created_tests, class_name: "Test", foreign_key: :author_id, dependent: :destroy
 
