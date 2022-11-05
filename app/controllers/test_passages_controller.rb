@@ -1,8 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage
 
-  def show
-  end
+  def show; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -14,8 +13,7 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def result
-  end
+  def result; end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

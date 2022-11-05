@@ -1,0 +1,17 @@
+<div class="header__wrapper">
+  <p><%= link_to 'Test Guru', root_path%></p>
+
+  <% if logged_in? %>
+  <div>
+    <p>Welcome, <b><%= current_user.name%></b></p>
+    <%= button_to 'Logout', logout_path, method: :delete,data: { confirm: 'Are
+    you sure?'} %>
+  </div>
+  <% else %>
+  <div>
+    <%= button_to 'Log in', login_path, method: :get %> 
+    <p>Are you new here?</p>
+    <%= button_to 'Sign up', signup_path, method: :get %>
+  </div>
+  <% end %>
+</div>

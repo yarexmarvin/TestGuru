@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-  get "test_passages/show"
-  get "test_passages/update"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   root to: "tests#index"
+  
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+
+  delete :logout, to: 'sessions#destroy'
+  
+  resources :users, only: :create
+  resources :sessions, only: :create
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :tests do
     resources :questions, shallow: true, except: :index do
