@@ -1,0 +1,8 @@
+<div>
+  <p>TestGuru Admin Panel</p>
+  <div>
+    <p>Welcome, <b><%= current_user.first_name %></b></p>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete,data: {
+    confirm: 'Are you sure?'} %>
+  </div>
+</div>
