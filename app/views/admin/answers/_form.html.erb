@@ -1,12 +1,11 @@
 <%= form_with model: [:admin, @test, @question, @answer] do |form| %>
-    <p>
-        <%= form.label :body, "Enter your answer: "%><br/>
-        <%= form.text_field :body%>
-    </p>
-    <p>
-        <%= form.label :correct, "correct: "%><br/>
-        <%= form.check_box :correct, id: :answer_id%>
-    </p>
-
-    <%= form.submit %>
+  <p>
+    <%= form.label :body, "Enter your answer: "%><br/>
+    <%= form.text_field :body%>
+  </p>
+  <p>
+    <%= form.label :correct, "correct: "%><br/>
+    <%= form.check_box :correct, id: :answer_id%>
+  </p>
+<%= form.submit %>
 <% end %>

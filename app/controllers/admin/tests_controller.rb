@@ -18,9 +18,9 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.created_tests.new(test_params)
     if @test.save
-      redirect_to admin_test_url(@test), notice: 'New test has been successfully created'
+      redirect_to [:admin, @test], notice: 'New test has been successfully created'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_url(@test), notice: 'The test has been successfully updated'
+      redirect_to [:admin, @test], notice: 'The test has been successfully updated'
     else
       render :new
     end
@@ -39,11 +39,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to test_path
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), notice: 'The test has been successfully deleted'
-  end
-
   private
 
   def find_test
@@ -51,6 +46,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end
