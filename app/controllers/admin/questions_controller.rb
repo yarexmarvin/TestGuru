@@ -16,7 +16,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to [:admin, @test], notice: 'New question has been successfully created'
+      redirect_to admin_question_path(@question), notice: 'New question has been successfully created'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to [:admin, @question], notice: 'The question has been successfully updated'
+      redirect_to admin_question_path(@question), notice: 'The question has been successfully updated'
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    redirect_to [:admin, @question.test_id], notice: 'The question has been successfully deleted'
+    redirect_to admin_test_path(@question.test_id), notice: 'The question has been successfully deleted'
   end
 
   def find_question
