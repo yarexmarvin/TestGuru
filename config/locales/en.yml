@@ -109,7 +109,14 @@ en:
 
   test_passages:
     result:
-      header: "Test %{title} has been successfully completed!"
+      header: "Test %{title} has been completed!"
+      back: 'Back to tests'
+      passed_questions: "%{count} of %{total} questions completed!"
+      test_passed: 'Test passed!'
+      test_not_passed: 'Test is not passed'
+    show:
+      next: 'Next question'
+      question_title: "Question № %{question_number}"
 
   shared:
     errors: 

@@ -82,7 +82,14 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
+      back: 'Назад к тестам'
+      passed_questions: "%{count} из %{total} вопросов пройдено!"
+      test_passed: 'Тест пройден!'
+      test_not_passed: 'Тест не пройден'
+    show:
+     next: 'Следующий вопрос'
+     question_title: "Вопрос № %{question_number}"
 
   shared:
     errors:
