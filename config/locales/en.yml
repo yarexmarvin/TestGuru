@@ -31,3 +31,98 @@
 
 en:
   hello: "Hello world"
+
+  helpers: 
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update test'
+      answer:
+        create: 'Create answer'
+        update: 'Update answer'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+      answer: 
+        body: 'Enter an answer:'
+        correct: 'Correct'
+    select:
+      prompt: "Choose a category"
+
+  questions_helper:
+    create_header: "Create %{question} question"
+    edit_header: "Edit %{question} question"
+
+  actions:
+    value: 'Actions'
+    test: 'Aсtions for the test'
+    question: 'Actions for the question'
+    answer: 'Actions for the answer'
+  
+  label:
+    test: 'Tests'
+    question: 'Questions'
+    answer: 'Answers'
+    level: 'Level'
+
+  system: 
+    button:
+      back: 'Back'
+      show: 'Show'
+      edit: 'Edit'
+      delete: 'Delete'
+    modal: 
+      confirm: 'Are you sure?'
+
+  admin:
+    tests:
+      create: 
+        success: 'Test has been successfully created!'
+      index:
+        header: 'Available tests'
+        new_test: 'Create a new test'
+      show: 
+        header: "%{title} test"
+        new_question: 'Create a new question'
+    answers:
+      new:
+        header: 'Create a new question'
+      edit:
+        header: 'Edit the question'
+      show:
+        question: 'Question:'
+        answer: 'Answer:'
+        сorrect: 'Correct:'
+    questions:
+      show:
+        header: "%{title} question"
+        new_answer: 'Create new answer'
+
+
+  tests: 
+    index:
+      header: 'Available tests'
+    test:
+      start: 'Start the test'
+
+  test_passages:
+    result:
+      header: "Test %{title} has been successfully completed!"
+
+  shared:
+    errors: 
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    header:
+      welcome: 'Welcome'
+      are_you_new: 'Are you new here?'
+      signup: 'Sign up'
+      login: 'Log in'
+      logout: 'Log out'
+
+  tests_mailer:
+    completed_test:
+      subject: "You have just completed the TestGuru test!"

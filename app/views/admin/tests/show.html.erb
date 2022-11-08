@@ -1,14 +1,15 @@
-<h2><%= @test.title%> test</h2>
+<h2><%= t('.header', title: @test.title) %></h2>
 <hr />
-<%= link_to 'New question', new_admin_test_question_path(@test) %> 
-<%= link_to 'edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+<span><%= t('actions.test')%></span><br>
+<%= link_to t('.new_question'), new_admin_test_question_path(@test) %> 
+<%= link_to t('system.button.edit'), edit_admin_test_path(@test) %>
+<%= link_to t('system.button.back'), admin_tests_path %>
 <hr />
 
 <table>
   <tr>
-    <th>Actions</th>
-    <th>Question</th>
+    <th colspan="3"><%= t('actions.value')%></th>
+    <th><%= t('label.question')%></th>
   </tr>
   <%= render @test.questions %>
 </table>

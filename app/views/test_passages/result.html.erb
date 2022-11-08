@@ -1,4 +1,4 @@
-<h3>Results of <%= @test_passage.test.title %> test</h3>
+<h3><%= t('.header', title: @test_passage.test.title) %></h3>
 <h4>
   Total: <%= @test_passage.correct_questions%> of <%=
   @test_passage.test.questions.count %> questions

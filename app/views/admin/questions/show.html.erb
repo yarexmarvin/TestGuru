@@ -1,9 +1,9 @@
-<h3><%= @question.test.title %> question</h3>
+<h3><%= t('.header', title: @question.test.title) %></h3>
 <p><%= @question.body %></p>
 <hr>
   <%= render @question.answers%>
 <hr>
-<%= link_to 'Back', admin_test_path(@question.test) %> | <%= link_to 'Edit',
-edit_admin_question_path(@question) %> | <%= link_to 'Delete',
-admin_question_path(@question), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('system.button.back'), admin_test_path(@question.test) %> | 
+<%= link_to t('system.button.edit'), edit_admin_question_path(@question) %> | 
+<%= link_to t('system.button.delete'), admin_question_path(@question), method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
