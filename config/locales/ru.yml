@@ -1,0 +1,110 @@
+ru:
+  hello: "Привет, мир!"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      answer:
+        body: "Введите ответ:"
+        correct: "Правильный:"
+      question:
+        body: "Введите вопрос"
+    select:
+        prompt: "Выберите категорию"
+
+  questions_helper:
+    create_header: "Создать вопрос для %{question} теста"
+    edit_header: "Редактировать %{question} вопрос"
+
+  actions:
+    value: "Действия"
+    test: "Действия для теста"
+    question: "Действия для вопроса"
+    answer: "Действия для ответа"
+
+  label:
+    test: "Тесты"
+    question: "Вопросы"
+    answer: "Ответы"
+    level: "Уровень"
+
+  system:
+    button:
+      back: "Назад"
+      show: "Показать"
+      edit: "Редактировать"
+      delete: "Удалить"
+    modal:
+      confirm: "Вы уверены?"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты"
+        new_test: "Создать новый тест"
+      show:
+        header: "%{title} тест"
+        new_question: "Создать новый вопрос"
+    answers:
+      new:
+        header: "Создать новый ответ"
+      edit:
+        header: "Редактировать ответ"
+      show:
+        question: "Вопрос:"
+        answer: "Ответ:"
+        сorrect: "Правильный:"
+    questions:
+      show:
+        header: "%{title} вопрос"
+        new_answer: "Создать новый вопрос"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+    test:
+      start: "Начать тест"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен!"
+      back: 'Назад к тестам'
+      passed_questions: "%{count} из %{total} вопросов пройдено!"
+      test_passed: 'Тест пройден!'
+      test_not_passed: 'Тест не пройден'
+    show:
+     next: 'Следующий вопрос'
+     question_title: "Вопрос № %{question_number}"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    header:
+      welcome: "Добро пожаловать"
+      are_you_new: "Вы здесь впервые?"
+      signup: "Зарегистироваться"
+      login: "Войти"
+      logout: "Выйти"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что завершили тест на ТестГуру!"

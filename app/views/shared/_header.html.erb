@@ -3,15 +3,14 @@
 
   <% if user_signed_in? %>
   <div>
-    <p>Welcome, <b><%= current_user.first_name %></b></p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete,data: { confirm: 'Are
-    you sure?'} %>
+    <p><%= t('.welcome') %> <b><%= current_user.first_name %></b></p>
+    <%= button_to t('.logout'), destroy_user_session_path, method: :delete,data: { confirm: t('system.modal.confirm')} %>
   </div>
   <% else %>
   <div>
-    <%= button_to 'Log in', new_user_session_path, method: :get %>
-    <p>Are you new here?</p>
-    <%= button_to 'Sign up', new_user_registration_path, method: :get %>
+    <%= button_to t('.login'), new_user_session_path, method: :get %>
+    <p><%= t('.are_you_new') %></p>
+    <%= button_to t('.signup'), new_user_registration_path, method: :get %>
   </div>
   <% end %>
 </div>

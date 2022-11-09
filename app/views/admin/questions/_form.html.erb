@@ -1,6 +1,6 @@
 <%= form_with model: [:admin, @test, @question] do |form| %>
   <p>
-    <%= form.label :body, "Enter your question: "%><br/>
+    <%= form.label :body %><br/>
     <%= form.text_field :body%>
   </p>
 <%= form.submit %>
