@@ -1,0 +1,12 @@
+
+<h2>All Question Gists</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Test</th>
+        <th>Gist</th>
+        <th>User</th>
+    </tr>
+    <%= render @gists %>
+</table>
+
+<%= link_to t('system.button.back'), admin_tests_path, class: 'btn btn-secondary mt-4' %>
