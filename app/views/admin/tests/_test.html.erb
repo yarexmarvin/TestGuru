@@ -2,9 +2,10 @@
   <td><%= test.title %></td>
   <td><%= level_translation(test.level) %></td>
   <td><%= questions_amount(test) %></td>
-  <td><%= link_to t('system.button.show'), admin_test_path(test), class:'btn' %></td>
-  <td><%= link_to t('system.button.edit'), edit_admin_test_path(test), class:'btn btn-warning' %></td>
-  <td> <%= link_to t('system.button.delete'), admin_test_path(test), class:'btn btn-danger' ,method: :delete, data: { confirm:
+  <td class="d-flex justify-content-center flex-wrap">
+    <%= link_to t('system.button.show'), admin_test_path(test), class:'btn m-1' %>
+    <%= link_to t('system.button.edit'), edit_admin_test_path(test), class:'btn btn-warning m-1' %>
+    <%= link_to t('system.button.delete'), admin_test_path(test), class:'btn btn-danger m-1' ,method: :delete, data: { confirm:
     t('modal.confirm') } %>
   </td>
 </tr>
