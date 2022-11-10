@@ -1,0 +1,33 @@
+ @import "bootstrap";
+
+/* footer */
+.footer__content>div {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__content>div p {
+    margin: 5px
+}
+
+/* header */
+
+.header__wrapper,
+.header__wrapper div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__wrapper div p {
+    margin: 0 10px
+}
+
+/* test_passage */
+.test_passed {
+    color: green
+}
+
+.test_not_passed {
+    color: tomato
+}

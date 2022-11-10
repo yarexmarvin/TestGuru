@@ -123,7 +123,7 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
-    header:
+    nav:
       welcome: 'Welcome'
       are_you_new: 'Are you new here?'
       signup: 'Sign up'
