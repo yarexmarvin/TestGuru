@@ -31,6 +31,10 @@ gem 'devise', '~> 4.0'
 # LOCALIZATION
 gem 'rails-i18n', '~> 6.0.0'
 
+# NETWORKING
+gem 'octokit', '~> 4.0'
+
+
 # STYLES
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.2.2'
@@ -41,6 +45,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -67,5 +72,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-smtp', require: false
 
-gem 'octokit', '~> 4.0'
-gem 'dotenv-rails', groups: [:development, :test]

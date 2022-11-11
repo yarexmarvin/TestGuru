@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     member do
       get :result
       post :gist
+      resources :gists, only: %i[create]
     end
   end
 
@@ -26,6 +27,6 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
-    resources :gists, only: %i[index create]
+    resources :gists, only: %i[index]
   end
 end

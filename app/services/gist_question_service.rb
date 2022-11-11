@@ -1,5 +1,4 @@
 class GistQuestionService
-
   def initialize(test_passage, client = default_client)
     @test_passage = test_passage
     @question = test_passage.current_question
@@ -7,19 +6,19 @@ class GistQuestionService
     @client = client
   end
 
-  def success?
-    @client.last_response.status == 201
-  end
-
   def call
     gist = structured_gist
 
-    stored_gist = @question.gists.new({ url: gist.url, question_id: @question.id, user_id: @test_passage.user_id })
+    stored_gist = @question.gists.new({ success: success?, url: gist.url, question_id: @question.id, user_id: @test_passage.user_id })
 
-    gist if stored_gist.save
+    gist if stored_gist.save!
   end
 
   private
+
+  def success?
+    @client.last_response.status == 201
+  end
 
   def default_client
     Octokit::Client.new(access_token: ENV.fetch("GITHUB_ACCESS_TOKEN"))
@@ -30,10 +29,9 @@ class GistQuestionService
   end
 
   def structured_gist
-    Struct.new("StructuredGist", :id, :url)
+    Struct.new("StructuredGist", :id, :url, :success)
     gist = create_gist
-    p gist
-    Struct::StructuredGist.new(gist[:id], gist[:html_url])
+    Struct::StructuredGist.new(gist[:id], gist[:html_url], success?)
   end
 
   def gist_params
@@ -42,9 +40,9 @@ class GistQuestionService
       'public': false,
       files: {
         'test-gutu-question.txt': {
-          content: gist_content
-        }
-      }
+          content: gist_content,
+        },
+      },
     }
   end
 

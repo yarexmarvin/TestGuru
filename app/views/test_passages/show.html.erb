@@ -10,5 +10,5 @@
   <p><%= b.check_box id: "answer_ids_#{b.object.id}" %> <%= b.label %></p>
   <% end %> <%= form.submit t('.next') %> <% end %>
 
-  <p><%= link_to 'Gist Question', admin_gists_path(test_passage:@test_passage.id), method: :post %></p>
+  <p><%= link_to 'Gist Question', gists_path(test_passage:@test_passage.id), method: :post %></p>
 </div>

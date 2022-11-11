@@ -99,10 +99,6 @@ en:
       show:
         header: "%{title} question"
         new_answer: 'Create new answer'
-    gists:
-      create:
-        success: "Gist successfully saved!"
-        failure: "An error occured during gist saving"
 
 
   tests: 
@@ -122,6 +118,11 @@ en:
       next: 'Next question'
       question_title: "Question № %{question_number}"
   
+  gists:
+    create:
+      success: "Gist successfully saved!"
+      failure: "An error occured during gist saving"
+      
   gist_questions_service:
     description: "The question about %{test} from TestGuru"
 
