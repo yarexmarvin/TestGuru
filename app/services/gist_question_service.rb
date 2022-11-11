@@ -14,7 +14,6 @@ class GistQuestionService
   def call
     gist = structured_gist
 
-    p gist
     stored_gist = @question.gists.new({ url: gist.url, question_id: @question.id, user_id: @test_passage.user_id })
 
     gist if stored_gist.save
