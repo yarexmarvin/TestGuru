@@ -26,22 +26,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # AUTH 
-
 gem 'devise', '~> 4.0'
 
 # LOCALIZATION
-
 gem 'rails-i18n', '~> 6.0.0'
 
 # STYLES
-
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.2.2'
-
-# NETWORKING
-gem 'octokit', '~> 4.0'
-
-gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -74,3 +66,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-smtp', require: false
+
+gem 'octokit', '~> 4.0'
+gem 'dotenv-rails', groups: [:development, :test]

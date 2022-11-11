@@ -73,6 +73,10 @@ ru:
       show:
         header: "%{title} вопрос"
         new_answer: "Создать новый вопрос"
+    gists:
+      create:
+        success: "Gist успешно сохранен!"
+        failure: "Во время сохранения gist произошла ошибка"
 
   tests:
     index:
@@ -90,9 +94,8 @@ ru:
     show:
      next: 'Следующий вопрос'
      question_title: "Вопрос № %{question_number}"
-    gist:
-      success: "Gist успешно сохранен!"
-      failure: "Во время сохранения gist произошла ошибка"
+
+
 
   gist_questions_service:
     description: "Вопрос об %{test} с TestGuru"
