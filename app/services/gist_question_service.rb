@@ -9,7 +9,7 @@ class GistQuestionService
   def call
     gist = structured_gist
 
-    stored_gist = @question.gists.new({ success: success?, url: gist.url, question_id: @question, user_id: @test_passage.user_id })
+    stored_gist = @question.gists.new({ success: success?, url: gist.url, question_id: @question, user_id: @test_passage.user_id})
 
     gist if stored_gist.save!
   end
@@ -40,9 +40,9 @@ class GistQuestionService
       'public': false,
       files: {
         'test-gutu-question.txt': {
-          content: gist_content,
-        },
-      },
+          content: gist_content
+        }
+      }
     }
   end
 

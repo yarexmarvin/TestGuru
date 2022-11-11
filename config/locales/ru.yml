@@ -93,7 +93,7 @@ ru:
 
   gists:
     create:
-      success: "Gist успешно сохранен!"
+      success: "%{link} успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
 
   gist_questions_service:

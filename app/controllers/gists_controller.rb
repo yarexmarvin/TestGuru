@@ -2,10 +2,12 @@ class GistsController < ApplicationController
   before_action :set_test_passage, only: :create
 
   def create
-    gist_question = GistQuestionService.new(@test_passage).call
+    gist_question_service = GistQuestionService.new(@test_passage).call
 
-    flash_options = if gist_question.success
-        { notice: t(".success") + " #{gist_question.url}" }
+    link = helpers.link_to "Gist", gist_question_service.url, target: "_blank"
+
+    flash_options = if gist_question_service.success
+        { notice: t(".success", link: link) }
       else
         { notice: t(".failure") }
       end

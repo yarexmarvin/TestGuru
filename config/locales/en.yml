@@ -120,7 +120,7 @@ en:
   
   gists:
     create:
-      success: "Gist successfully saved!"
+      success: "%{link} successfully saved!"
       failure: "An error occured during gist saving"
       
   gist_questions_service:
