@@ -3,7 +3,7 @@ module GistsHelper
   include Rails.application.routes.url_helpers
 
   def test_link(question)
-    link_to question.test.title.truncate(15), admin_question_path(question)
+    link_to question.body.truncate(25), admin_question_path(question)
   end
 
   def gist_url(gist)
