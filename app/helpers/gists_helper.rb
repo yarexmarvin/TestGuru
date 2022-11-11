@@ -7,7 +7,8 @@ module GistsHelper
   end
 
   def gist_url(gist)
-    link_to gist.url, "https://gist.github.com/#{gist.url}", target: '_blank'
+    hash = gist.url.split('/').last
+    link_to hash, gist.url, target: '_blank'
   end
 
   def user_email(gist)

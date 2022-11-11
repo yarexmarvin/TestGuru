@@ -10,10 +10,8 @@ class Admin::GistsController < Admin::BaseController
     result = new_gist.call
 
     if new_gist.success?
-      #   current_user.gists.create(url: result.id, question_id: @test_passage.current_question.id)
-      link = helpers.link_to "gist", result.url, target: "_blank"
-
-      flash_options = { notice: t(".success") + " #{link}" }
+        
+      flash_options = { notice:  t(".success") + result.url }
     else
       flash_options = { notice: t(".failure") }
     end
