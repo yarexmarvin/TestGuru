@@ -117,6 +117,14 @@ en:
     show:
       next: 'Next question'
       question_title: "Question № %{question_number}"
+  
+  gists:
+    create:
+      success: "%{link} successfully saved!"
+      failure: "An error occured during gist saving"
+      
+  gist_questions_service:
+    description: "The question about %{test} from TestGuru"
 
   shared:
     errors: 

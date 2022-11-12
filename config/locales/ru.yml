@@ -91,6 +91,14 @@ ru:
      next: 'Следующий вопрос'
      question_title: "Вопрос № %{question_number}"
 
+  gists:
+    create:
+      success: "%{link} успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
+
+  gist_questions_service:
+    description: "Вопрос об %{test} с TestGuru"
+
   shared:
     errors:
       header:
