@@ -6,7 +6,11 @@
 </div>
 <table class="table table-striped table-hover">
   <tr>
-    <th><%= t('label.test') %></td>
+    <th class="sort-by-title pointer">
+      <%= t('label.test') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </td>
     <th><%= t('label.level') %></td>
     <th><%= t('label.question') %></td>
     <th><%= t('actions.value') %></td>
