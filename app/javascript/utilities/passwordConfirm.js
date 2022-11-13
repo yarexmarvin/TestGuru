@@ -1,26 +1,28 @@
 document.addEventListener('turbolinks:load', function () {
-  const registrationForm = document.querySelector('.new_user');
 
-  const passConfirmInput = registrationForm?.querySelector('#user_password_confirmation');
+  const passInput = document.querySelector('#user_password');
+  const passConfirmInput = document.querySelector('#user_password_confirmation');
 
-  if (passConfirmInput) {
-    passConfirmInput.addEventListener('input', comparePassowrds);
+  if (passConfirmInput && passInput) {
+    passInput.addEventListener('input', (e)=> comparePassowrds(e, passConfirmInput ));
+    passConfirmInput.addEventListener('input', (e)=> comparePassowrds(e, passInput ));
   }
 
 });
 
 
-function comparePassowrds(e) {
+function comparePassowrds(e, input) {
 
-  const userPasswordInput = document.querySelector('#user_password');
+  const inputValue = input.value
+  const currentInputValue = e.target.value
 
-  const isEqual = userPasswordInput.value === e.target.value;
+  const isEqual = inputValue=== currentInputValue;
 
   const successIcon = document.querySelector('.octicon-check-circle-fill');
   const failIcon = document.querySelector('.octicon-alert');
 
 
-  if (e.target.value == '') {
+  if (inputValue === '' || currentInputValue === '' ) {
     successIcon?.classList.add('hide');
     failIcon?.classList.add('hide');
     return;
@@ -35,4 +37,3 @@ function comparePassowrds(e) {
   }
 
 }
-
