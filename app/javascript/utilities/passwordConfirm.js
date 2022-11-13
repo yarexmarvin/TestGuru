@@ -1,39 +1,48 @@
 document.addEventListener('turbolinks:load', function () {
 
-  const passInput = document.querySelector('#user_password');
-  const passConfirmInput = document.querySelector('#user_password_confirmation');
+  const reg_form = document.getElementById('new_user');
 
-  if (passConfirmInput && passInput) {
-    passInput.addEventListener('input', (e)=> comparePassowrds(e, passConfirmInput ));
-    passConfirmInput.addEventListener('input', (e)=> comparePassowrds(e, passInput ));
-  }
+  if (reg_form) new PasswordConfirmation(reg_form);
 
 });
 
+class PasswordConfirmation {
+  constructor(form) {
+    this.form = form;
+    this.password = form.elements.user_password;
+    this.password_confirm = form.elements.user_password_confirmation;
 
-function comparePassowrds(e, input) {
-
-  const inputValue = input.value
-  const currentInputValue = e.target.value
-
-  const isEqual = inputValue=== currentInputValue;
-
-  const successIcon = document.querySelector('.octicon-check-circle-fill');
-  const failIcon = document.querySelector('.octicon-alert');
-
-
-  if (inputValue === '' || currentInputValue === '' ) {
-    successIcon?.classList.add('hide');
-    failIcon?.classList.add('hide');
-    return;
+    this.setup();
   }
 
-  if (isEqual) {
-    successIcon?.classList.remove('hide');
-    failIcon?.classList.add('hide');
-  } else {
-    successIcon?.classList.add('hide');
-    failIcon?.classList.remove('hide');
+  resetStyleForInputs() {
+    this.password_confirm.classList.remove('input-green');
+    this.password_confirm.classList.remove('input-red');
+    this.password_confirm.parentElement.classList.remove('success');
+    this.password_confirm.parentElement.classList.remove('error');
+  }
+
+  checkPasswords() {
+    this.resetStyleForInputs();
+
+    if (this.password_confirm.value === '') {
+      return;
+    }
+    
+    if (this.password_confirm.value === this.password.value) {
+      this.password_confirm.classList.add('input-green');
+      this.password_confirm.parentElement.classList.add('success');
+    } else {
+      this.password_confirm.classList.add('input-red');
+      this.password_confirm.parentElement.classList.add('error');
+    }
+  }
+
+  setup() {
+    console.log(this.password);
+    this.form.addEventListener('keyup', event => {
+      if (this.password.value !== '') this.checkPasswords();
+    });
   }
 
 }

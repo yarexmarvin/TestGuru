@@ -3,3 +3,17 @@
     vertical-align: text-top;
     fill: currentColor
 }
+
+
+
+.success .octicon-check-circle-fill,
+.error .octicon-alert {
+    display: block;
+}
+
+.octicon-check-circle-fill,
+.octicon-alert,
+.error .octicon-check-circle-fill,
+.success .octicon-alert {
+    display: none;
+}
