@@ -28,7 +28,7 @@ class PasswordConfirmation {
     if (this.password_confirm.value === '') {
       return;
     }
-    
+
     if (this.password_confirm.value === this.password.value) {
       this.password_confirm.classList.add('input-green');
       this.password_confirm.parentElement.classList.add('success');
@@ -39,7 +39,6 @@ class PasswordConfirmation {
   }
 
   setup() {
-    console.log(this.password);
     this.form.addEventListener('keyup', event => {
       if (this.password.value !== '') this.checkPasswords();
     });
