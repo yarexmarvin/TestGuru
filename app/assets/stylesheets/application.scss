@@ -1,4 +1,6 @@
  @import "bootstrap";
+ @import "typography/icons";
+ @import "global";
 
 /* footer */
 .footer__content>div {
@@ -31,3 +33,6 @@
 .test_not_passed {
     color: tomato
 }
+
+
+
