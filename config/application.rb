@@ -15,6 +15,7 @@ module TestGuru
 
     config.i18n.default_locale = :ru
 
+    config.assets.initialize_on_precompile = false
     # config.autoload_paths << "#{Rails.root}/lib/clients"
     # Configuration for the application, engines, and railties goes here.
     #
