@@ -1,14 +1,31 @@
-<h5><%= @test_passage.test.title %></h5>
-
+<h5>
+  <%= @test_passage.test.title %>
+</h5>
+<div class="progress-bar">
+  <%= content_tag :div, nil, class: "progress-bar-inner", 
+                              data: { 
+                                      questions_count: @test_passage.test.questions.count,
+                                      question_number: @test_passage.test.questions.index(@test_passage.current_question)
+                                    } %>
+</div>
 <%= question_number(@test_passage.current_question)%>
 
-<p><%= @test_passage.current_question.body %></p>
+<p>
+  <%= @test_passage.current_question.body %>
+</p>
 
 <div>
-  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do | form | %> <%= form.collection_check_boxes :answer_ids,
-  @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|%>
-  <p><%= b.check_box id: "answer_ids_#{b.object.id}" %> <%= b.label %></p>
-  <% end %> <%= form.submit t('.next') %> <% end %>
-
-  <p><%= link_to 'Gist Question', gists_path(test_passage:@test_passage.id), method: :post %></p>
+  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do | form | %> 
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}" %> 
+        <%= b.label %>
+      </p>
+    <% end %> 
+    <%= form.submit t('.next') %> 
+  <% end %>
+  <p>
+    <%= link_to 'Gist Question', gists_path(test_passage:@test_passage.id), method: :post %>
+  </p>
 </div>
+

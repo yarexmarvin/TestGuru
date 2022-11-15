@@ -1,10 +1,13 @@
 <tr>
-  <td><%= test.title %></td>
-  <td><%= level_translation(test.level) %></td>
-  <td><%= questions_amount(test) %></td>
-  <td class="d-flex justify-content-center flex-wrap">
+  <td class="align-middle">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test? @test : test %>
+  </td>
+  <td class="align-middle"><%= level_translation(test.level) %></td>
+  <td class="align-middle"><%= questions_amount(test) %></td>
+  <td class="d-flex justify-content-center flex-wrap align-middle">
     <%= link_to t('system.button.show'), admin_test_path(test), class:'btn m-1' %>
-    <%= link_to t('system.button.edit'), edit_admin_test_path(test), class:'btn btn-warning m-1' %>
+    <%= link_to t('system.button.edit'), edit_admin_test_path(test), data: { test_id: test.id }, class:'btn btn-warning m-1 form-inline-link' %>
     <%= link_to t('system.button.delete'), admin_test_path(test), class:'btn btn-danger m-1', method: :delete, data: { confirm:
     t('modal.confirm') } %>
   </td>
