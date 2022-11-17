@@ -17,11 +17,11 @@ users = User.create!([
 ])
 
 tests = Test.create!([
-  { title: "HTML", level: 0, category_id: categories[0].id, author_id: users[2].id },
-  { title: "JavaScript", level: 2, category_id: categories[0].id, author_id: users[2].id },
-  { title: "Ruby", level: 3, category_id: categories[1].id, author_id: users[2].id },
-  { title: "Ruby on Rails", level: 3, category_id: categories[1].id, author_id: users[2].id },
-  { title: "Swift", level: 3, category_id: categories[2].id, author_id: users[2].id },
+  { title: "HTML", level: 0, category_id: categories[0].id, author_id: users[0].id },
+  { title: "JavaScript", level: 2, category_id: categories[0].id, author_id: users[0].id },
+  { title: "Ruby", level: 3, category_id: categories[1].id, author_id: users[0].id },
+  { title: "Ruby on Rails", level: 3, category_id: categories[1].id, author_id: users[0].id },
+  { title: "Swift", level: 3, category_id: categories[2].id, author_id: users[0].id },
 ])
 
 questions = Question.create!([
@@ -74,7 +74,4 @@ answers = Answer.create!([
 
 test_passages = TestPassage.create!([
   { user_id: users[0].id, test_id: tests[1].id },
-  { user_id: users[1].id, test_id: tests[3].id },
-  { user_id: users[0].id, test_id: tests[2].id },
-  { user_id: users[1].id, test_id: tests[4].id },
 ])
