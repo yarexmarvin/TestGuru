@@ -16,10 +16,10 @@ class PasswordConfirmation {
   }
 
   resetStyleForInputs() {
-    this.password_confirm.classList.remove('input-green');
-    this.password_confirm.classList.remove('input-red');
-    this.password_confirm.parentElement.classList.remove('success');
-    this.password_confirm.parentElement.classList.remove('error');
+    this.password_confirm?.classList.remove('input-green');
+    this.password_confirm?.classList.remove('input-red');
+    this.password_confirm?.parentElement.classList.remove('success');
+    this.password_confirm?.parentElement.classList.remove('error');
   }
 
   checkPasswords() {
@@ -40,7 +40,7 @@ class PasswordConfirmation {
 
   setup() {
     this.form.addEventListener('keyup', event => {
-      if (this.password.value !== '') this.checkPasswords();
+      if (this.password && this.password.value !== '') this.checkPasswords();
     });
   }
 

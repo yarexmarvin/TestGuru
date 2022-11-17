@@ -112,6 +112,8 @@ ru:
       signup: "Зарегистироваться"
       login: "Войти"
       logout: "Выйти"
+      feedback: 'Отзывы'
+
 
   tests_mailer:
     completed_test:

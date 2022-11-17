@@ -63,15 +63,17 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "TestGuru_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "sleepy-ridge-38961.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "test-guru-yarex.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    tls: true,
     address: "smtp.yandex.ru",
     port: 465,
+    domain:  'yandex.ru',
+    enable_starttls_auto: true,
     user_name: ENV["SMTP_USERNAME"],
     password: ENV["SMTP_PASSWORD"],
     authentication: "plain",
-    enable_starttls_auto: true,
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
