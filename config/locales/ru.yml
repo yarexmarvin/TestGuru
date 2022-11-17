@@ -113,6 +113,9 @@ ru:
       login: "Войти"
       logout: "Выйти"
       feedback: 'Отзывы'
+    feedback:
+      send: 'Отправить отзыв'
+      message: 'Отзыв'
 
 
   tests_mailer:

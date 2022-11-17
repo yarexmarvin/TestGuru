@@ -138,6 +138,10 @@ en:
       login: 'Log in'
       logout: 'Log out'
       feedback: 'Feedback'
+    feedback:
+      send: 'Send feedback'
+      message: 'Feedback message'
+
 
   tests_mailer:
     completed_test:
