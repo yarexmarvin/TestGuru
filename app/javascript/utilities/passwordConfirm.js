@@ -40,7 +40,7 @@ class PasswordConfirmation {
 
   setup() {
     this.form.addEventListener('keyup', event => {
-      if (this.password && this.password.value !== '') this.checkPasswords();
+      if (this.password_confirm && this.password && this.password.value !== '') this.checkPasswords();
     });
   }
 
