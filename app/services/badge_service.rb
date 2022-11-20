@@ -1,4 +1,11 @@
 class BadgeService
+
+  RULES = [
+    {rule_id: 1, value: 'success_at_first_try', title: 'За успешное прохождения теста с первого раза'},
+    {rule_id: 2, value: 'complete_category_tests', title: 'За прохождение всех тестов из категории'},
+    {rule_id: 1, value: 'complete_level_tests', title: 'За прохождение всех тестов по уровню'},
+  ]
+
   def initialize(test_passage)
     @user = test_passage.user
     @current_test = test_passage.test
