@@ -1,0 +1,21 @@
+  <tr>
+    <td><div class="badge-img"><%= image_tag "#{badge.url}", alt:'badge' %></div></td>
+    <td><%= badge.title %></td>
+    <td colspan="3">
+      <% if current_user.admin? %>
+         <div>
+           <%= link_to t('system.button.edit'),  edit_admin_badge_path(badge), class:'btn btn-warning m-1' %>
+           <%= link_to t('system.button.delete'), admin_badge_path(badge), 
+                                                  class:'btn btn-danger m-1', method: :delete,
+                                                  data: { confirm: t('modal.confirm') } %>
+           </div>
+      <% end %>
+    </td>
+  </tr>
+
+
+
+
+
+
+

@@ -40,6 +40,12 @@ en:
       answer:
         create: 'Create answer'
         update: 'Update answer'
+      question:
+        create: "Create question"
+        update: "Update question"
+      badge:
+        create: "Create badge"
+        update: "Update badge"
     label:
       test:
         title: 'Title'
@@ -99,6 +105,11 @@ en:
       show:
         header: "%{title} question"
         new_answer: 'Create new answer'
+    badges:
+      new:
+        header: 'Create a badge'
+      edit:
+        header: 'Edit the badge'
 
 
   tests: 
@@ -106,6 +117,22 @@ en:
       header: 'Available tests'
     test:
       start: 'Start the test'
+      completed: 'Test completed'
+
+  badges:
+    index:
+      header: 'Аll badges'
+      create_badges: 'Create badges'
+      title: 'Title'
+      sticker: 'Sticker'
+      actions: 'Actions'
+  given_badges:
+    index:
+      header: 'My badges'
+      title: 'Title'
+      sticker: 'Sticker'
+      no_badges: 'Badges are not found, take a test!'
+
 
   test_passages:
     result:
@@ -138,11 +165,13 @@ en:
       login: 'Log in'
       logout: 'Log out'
       feedback: 'Feedback'
+      all_badges: 'All badges'
+      my_badges: 'My badges'
     feedback:
       send: 'Send feedback'
       message: 'Feedback message'
 
-
   tests_mailer:
     completed_test:
       subject: "You have just completed the TestGuru test!"
+

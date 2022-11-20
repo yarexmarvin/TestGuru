@@ -29,8 +29,10 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: %i[index]
+    resources :badges
   end
 
   resources :feedbacks, only: %i[index create]
-
+  resources :badges, only: %i[index]
+  resources :given_badges
 end

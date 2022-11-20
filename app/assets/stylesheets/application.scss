@@ -47,3 +47,14 @@
     background-color: green;
 }
 
+
+
+.badge-img {
+    max-width: 100px;
+    height: auto;
+    img {
+      object-fit: contain;
+      max-width: 100px;
+    }
+  }
+  

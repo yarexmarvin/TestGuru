@@ -1,0 +1,2 @@
+module GivenBadgesHelper
+end

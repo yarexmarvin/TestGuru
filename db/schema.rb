@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_153038) do
+ActiveRecord::Schema.define(version: 2022_11_19_072856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2022_11_11_153038) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "rule"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -39,6 +47,15 @@ ActiveRecord::Schema.define(version: 2022_11_11_153038) do
     t.boolean "success"
     t.index ["question_id"], name: "index_gists_on_question_id"
     t.index ["user_id"], name: "index_gists_on_user_id"
+  end
+
+  create_table "given_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_given_badges_on_badge_id"
+    t.index ["user_id"], name: "index_given_badges_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -101,6 +118,8 @@ ActiveRecord::Schema.define(version: 2022_11_11_153038) do
   add_foreign_key "answers", "questions"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
+  add_foreign_key "given_badges", "badges"
+  add_foreign_key "given_badges", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"

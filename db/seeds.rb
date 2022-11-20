@@ -139,3 +139,10 @@ answers = Answer.create!([
 test_passages = TestPassage.create!([
   { user_id: users[0].id, test_id: tests[1].id },
 ])
+
+
+badges = Badge.create!([
+  {title: 'First try!', rule: 'success_at_first_try', url: 'https://www.clipartmax.com/png/full/11-117289_gold-white-badge-with-banner-png-clip-art-image-gold-white-badge.png'},
+  {title: 'All tests by category!', rule: 'complete_category_tests', url: 'https://toppng.com/uploads/preview/gold-badge-transparent-png-image-11602399372donkk1trus.png'},
+  {title: 'All tests by level', rule: 'complete_level_tests', url: 'https://www.pngjoy.com/pngl/530/28753340_award-ribbon-png-picture-png-format-award-ribbon.png'}
+])

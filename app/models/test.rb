@@ -12,11 +12,17 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  
-  scope :by_category, ->(category) { joins(:category).where(categories: { title: category }) }
+
+  scope :by_category, ->(category) { joins(:category).where(categories: { id: category }) }
+  scope :by_level, ->(level) { where(level: level) }
   scope :descending, -> { order(title: :desc) }
 
-  def self.test_by_category(category)
-    by_category(category).descending.pluck(:title)
+  def self.tests_by_category(category)
+    by_category(category).descending
   end
+
+  def self.tests_by_level(level)
+    by_level(level).descending
+  end
+  
 end

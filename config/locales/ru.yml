@@ -12,6 +12,9 @@ ru:
       question:
         create: "Создать вопрос"
         update: "Обновить вопрос"
+      badge:
+        create: "Создать награду"
+        update: "Обновить награду"
     label:
       test:
         title: "Название"
@@ -73,12 +76,33 @@ ru:
       show:
         header: "%{title} вопрос"
         new_answer: "Создать новый вопрос"
+    badges:
+      new:
+        header: 'Создать награду'
+      edit:
+        header: 'Редактировать награду'
 
   tests:
     index:
       header: "Доступные тесты"
     test:
       start: "Начать тест"
+      completed: 'Тест завершен'
+
+
+  badges:
+    index:
+      header: 'Все награды'
+      create_badges: 'Cоздать награды'
+      title: 'Описание'
+      sticker: 'Значок'
+      actions: 'Действия'
+  given_badges:
+    index:
+      header: 'Мои награды'
+      title: 'Описание'
+      sticker: 'Значок'
+      no_badges: 'Награды не найдены, пройдите успешно тест'
 
   test_passages:
     result:
@@ -113,10 +137,11 @@ ru:
       login: "Войти"
       logout: "Выйти"
       feedback: 'Отзывы'
+      all_badges: 'Все награды'
+      my_badges: 'Мои награды'
     feedback:
       send: 'Отправить отзыв'
       message: 'Отзыв'
-
 
   tests_mailer:
     completed_test:
