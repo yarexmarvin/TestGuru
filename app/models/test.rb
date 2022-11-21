@@ -24,5 +24,11 @@ class Test < ApplicationRecord
   def self.tests_by_level(level)
     by_level(level).descending
   end
+
+  def completed?
+    completed_passages = TestPassage.all.filter { |passage| passage.completed? }.pluck(:test_id)
+
+    completed_passages.include?(self.id)
+  end
   
 end

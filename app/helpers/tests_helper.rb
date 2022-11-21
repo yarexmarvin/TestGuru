@@ -9,9 +9,4 @@ module TestsHelper
     LEVELS[level]
   end
 
-  def completed?(test)
-    completed_passages = TestPassage.all.filter { |passage| passage.completed? }.pluck(:test_id)
-
-    completed_passages.include?(test.id)
-  end
 end

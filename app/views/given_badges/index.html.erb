@@ -1,6 +1,6 @@
 <h1><%= t('.header')%></h1>
 
-<% if @given_badges.size.zero? %>
+<% if @badges.empty? %>
 
 <p><%= t('.no_badges')%></p>
 
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render 'given_badge', given_badges: @given_badges %>
+      <%= render @badges %>
     </tbody>
   </table>
 

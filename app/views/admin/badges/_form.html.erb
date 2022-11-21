@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= form.label :rule %> <br />
-    <%= form.select :rule,  options_for_select(BadgeService::RULES.collect {|rule| [rule[:title], rule[:value]]})%>
+    <%= form.select :rule,  options_for_select(BadgeService::RULES.pluck(:title, :value))%>
   </p>
   <%= form.submit %> 
 <% end %>

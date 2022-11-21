@@ -2,8 +2,8 @@
   <td><%= test.title %></td>
   <td><%= level_translation(test.level) %></td>
   <td><%= questions_amount(test) %></td>
-  <td><%= button_to "#{completed?(test)? t('.completed') : t('.start')}", start_test_path(test), 
-                                    class: "btn #{completed?(test) ? 'btn-disabled' :' btn-success'}",
-                                    disabled: completed?(test) %></td>
+  <td><%= button_to "#{test.completed?? t('.completed') : t('.start')}", start_test_path(test), 
+                                    class: "btn #{test.completed? ? 'btn-disabled' :' btn-success'}",
+                                    disabled: test.completed?%></td>
 </tr>
 
