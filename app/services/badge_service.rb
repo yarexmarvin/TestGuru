@@ -1,30 +1,15 @@
-require_relative "./badge_rules/success_at_first_try"
-require_relative "./badge_rules/complete_category_tests"
-require_relative "./badge_rules/complete_level_tests.rb"
+# require_relative "./badge_rules/badge_rules"
 
 class BadgeService
-  RULES = [
-    { value: "success_at_first_try", title: "За успешное прохождения теста с первого раза" },
-    { value: "complete_category_tests", title: "За прохождение всех тестов из категории" },
-    { value: "complete_level_tests", title: "За прохождение всех тестов по уровню" },
-  ]
-
-  RULE = {
-    success_at_first_try: SuccessAtFirsTry,
-    complete_category_tests: CompleteCategoryTests,
-    complete_level_tests: CompleteLeveTests,
-  }
-
   def initialize(test_passage)
     @user = test_passage.user
     @current_test = test_passage.test
+    @rules_service = BadgeRulesService.new(@user, @current_test)
   end
 
   def call
-    Badge.all.each do |badge|
-      if RULE[badge.rule.to_sym].new(@user, @current_test).completed?
-        @user.badges << badge
-      end
+    Badge.find_each do |badge|
+      @user.badges << badge if @rules_service.send(badge.rule)
     end
   end
 end
