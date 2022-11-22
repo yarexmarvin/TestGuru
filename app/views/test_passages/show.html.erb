@@ -1,6 +1,9 @@
 <h5>
   <%= @test_passage.test.title %>
 </h5>
+<div class="title_container">
+  <div class="timer"  data-timer = "<%= @test_passage.get_timer %>"></div>
+</div>
 <div class="progress-bar">
   <%= content_tag :div, nil, class: "progress-bar-inner", 
                               data: { 

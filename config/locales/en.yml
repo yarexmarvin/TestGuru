@@ -83,9 +83,11 @@ en:
       index:
         header: 'Available tests'
         new_test: 'Create a new test'
+        time: "Time"
       show: 
         header: "%{title} test"
         new_question: 'Create a new question'
+        time: "Time: %{timer} minutes"
     answers:
       new:
         header: 'Create a new question'

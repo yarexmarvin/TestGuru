@@ -14,6 +14,7 @@ import "utilities/sorting"
 import "utilities/passwordConfirm"
 import "utilities/form_inline"
 import "utilities/progressBar"
+import "utilities/timer"
 
 Rails.start()
 Turbolinks.start()

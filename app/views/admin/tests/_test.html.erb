@@ -5,6 +5,7 @@
   </td>
   <td class="align-middle"><%= level_translation(test.level) %></td>
   <td class="align-middle"><%= questions_amount(test) %></td>
+  <td class="align-middle"><%= test.timer %></td>
   <td class="d-flex justify-content-center flex-wrap align-middle">
     <%= link_to t('system.button.show'), admin_test_path(test), class:'btn m-1' %>
     <%= link_to t('system.button.edit'), edit_admin_test_path(test), data: { test_id: test.id }, class:'btn btn-warning m-1 form-inline-link' %>

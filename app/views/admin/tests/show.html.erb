@@ -6,6 +6,9 @@
   <%= link_to t('system.button.edit'), edit_admin_test_path(@test), class: 'btn btn-warning' %>
   <%= link_to t('system.button.back'), admin_tests_path, class: 'btn btn-secondary' %>
 </div>
+<p>
+  <strong><%= t('.time', timer: @test.timer ) %></strong>
+</p>
 <hr />
 
 <table class="table table-striped">
