@@ -1,6 +1,6 @@
 class Badge < ApplicationRecord
   RULES = [
-    { value: "success_at_first_try", title: "За успешное прохождения теста с первого раза" },
+    { value: "complete_first_try", title: "За успешное прохождения теста с первого раза" },
     { value: "complete_category_tests", title: "За прохождение всех тестов из категории" },
     { value: "complete_level_tests", title: "За прохождение всех тестов по уровню" },
   ].freeze

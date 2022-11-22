@@ -142,7 +142,7 @@ test_passages = TestPassage.create!([
 
 
 badges = Badge.create!([
-  {title: 'First try!', rule: 'success_at_first_try', url: 'https://www.clipartmax.com/png/full/11-117289_gold-white-badge-with-banner-png-clip-art-image-gold-white-badge.png'},
+  {title: 'First try!', rule: 'complete_first_try', url: 'https://www.clipartmax.com/png/full/11-117289_gold-white-badge-with-banner-png-clip-art-image-gold-white-badge.png'},
   {title: 'All tests by category!', rule: 'complete_category_tests', url: 'https://toppng.com/uploads/preview/gold-badge-transparent-png-image-11602399372donkk1trus.png'},
   {title: 'All tests by level', rule: 'complete_level_tests', url: 'https://www.pngjoy.com/pngl/530/28753340_award-ribbon-png-picture-png-format-award-ribbon.png'}
 ])

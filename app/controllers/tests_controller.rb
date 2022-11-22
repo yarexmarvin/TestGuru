@@ -5,6 +5,8 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
+    @completed_tests = TestPassage.all.filter { |passage| passage.completed? }.pluck(:test_id)
+
   end
 
   def start
