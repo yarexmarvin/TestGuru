@@ -60,9 +60,11 @@ ru:
       index:
         header: "Доступные тесты"
         new_test: "Создать новый тест"
+        time: "Время"
       show:
         header: "%{title} тест"
         new_question: "Создать новый вопрос"
+        time: "Время: %{timer} минут"
     answers:
       new:
         header: "Создать новый ответ"

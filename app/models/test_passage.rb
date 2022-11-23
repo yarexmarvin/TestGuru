@@ -41,4 +41,13 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
+
+  def get_timer
+    self.created_at + self.test.timer * 60 - Time.now
+  end
+
+  def time_left?
+    self.created_at + self.test.timer * 60 - Time.now <= 0 ? true : false
+  end
+  
 end
