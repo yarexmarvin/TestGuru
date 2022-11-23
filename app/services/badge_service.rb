@@ -3,7 +3,7 @@ class BadgeService
     complete_category_tests: CompleteCategoryTests,
     complete_level_tests: CompleteLevelTests,
     complete_first_try: CompleteFirstTry
-  }
+  }.freeze
 
   def initialize(test_passage)
     @user = test_passage.user
